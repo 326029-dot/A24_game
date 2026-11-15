@@ -367,6 +367,11 @@
                 holdPiece = temp;
                 piece.y = 0;
                 piece.x = Math.floor(COLS / 2) - Math.floor(piece.shape[0].length / 2);
+                if (collide(board, piece)) {
+                    gameOver = true;
+                    isPlaying = false;
+                    showGameOver();
+                }
             }
             canHold = false;
             dropCounter = 0;
